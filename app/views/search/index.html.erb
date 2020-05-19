@@ -3,5 +3,12 @@
 </section>
 
 <section class="list">
-
+  <% @members.each_with_index do |member, index| %>
+    <section id='member-<%= index %>'>
+      <p>Name: <%= member[:name] %></p>
+      <p>Role: <%= member[:role] if member[:role].present? %></p>
+      <p>House: <%= member[:house] %></p>
+      <p>Patronus: <%= member[:partonus] if member[:partonus].present? %></p>
+    </section>
+  <% end %>
 </section>

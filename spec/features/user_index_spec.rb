@@ -25,9 +25,9 @@ RSpec.describe 'As a user' do
       within '.list' do
         within '#member-0' do
           expect(page).to have_content('Name: Sirius Black')
-          expect(page).to have_content("Role: ")
+          expect(page).to have_content("Role:")
           expect(page).to have_content("House: Gryffindor")
-          expect(page).to have_content("Patronus: goat")
+          expect(page).to have_content("Patronus:")
         end
       end
     end
