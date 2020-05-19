@@ -1,16 +1,14 @@
 class HarryPotterService
   def order_of_phoenix_from(house)
     params = params = {'orderOfThePhoenix' => 'true', 'house' => house}
-    x = parsed_json('characters', params)
-    require 'pry'; binding.pry
+    parsed_json('characters', params)
   end
 
   private
 
   def connect
-    Faraday.new('https://www.potterapi.com/v1') do |res|
+    Faraday.new('https://www.potterapi.com/v1') do |req|
       req.params['key'] = ENV['HP_KEY']
-
     end
   end
 

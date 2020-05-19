@@ -18,6 +18,19 @@ RSpec.describe 'As a user' do
         expect(page).to have_content('Total: 21')
       end
     end
+
+    it "I should see a list of members with name, role, house, patronus" do
+      visit '/search?house=Gryffindor'
+
+      within '.list' do
+        within '#member-0' do
+          expect(page).to have_content('Name: Sirius Black')
+          expect(page).to have_content("Role: ")
+          expect(page).to have_content("House: Gryffindor")
+          expect(page).to have_content("Patronus: goat")
+        end
+      end
+    end
   end
 end
 
